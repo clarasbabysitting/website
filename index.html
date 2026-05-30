@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clara's Babysitting — Childcare you can count on</title>
+  <meta name="description" content="Professional babysitting services. Book trusted, flexible, and reliable childcare online with ease.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌿</text></svg>">
+</head>
+<body>
+
+  <!-- ============================================================
+       NAVIGATION
+  ============================================================ -->
+  <nav class="nav" id="navbar">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo">
+        <div class="nav-logo-icon">🌿</div>
+        Clara's
+      </a>
+      <div class="nav-links">
+        <a href="#services" class="nav-link">Services</a>
+        <a href="#why"      class="nav-link">Why Us</a>
+        <a href="#reviews"  class="nav-link">Reviews</a>
+      </div>
+      <div class="nav-cta">
+        <a href="login.html"   class="btn btn-outline btn-sm">Log In</a>
+        <a href="signup.html"  class="btn btn-primary btn-sm">Get Started</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="#services" class="nav-link">Services</a>
+    <a href="#why"      class="nav-link">Why Us</a>
+    <a href="#reviews"  class="nav-link">Reviews</a>
+    <div class="mobile-menu-cta">
+      <a href="login.html"  class="btn btn-outline">Log In</a>
+      <a href="signup.html" class="btn btn-primary">Get Started →</a>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       HERO
+  ============================================================ -->
+  <section class="hero" id="home">
+    <div class="hero-bg">
+      <div class="hero-orb hero-orb-1"></div>
+      <div class="hero-orb hero-orb-2"></div>
+      <div class="hero-grid"></div>
+    </div>
+    <div class="container hero-inner">
+      <!-- Left: Copy -->
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="hero-badge-dot"></span>
+          Now accepting bookings
+        </div>
+        <h1 class="hero-title">
+          Babysitting<br>
+          you can <em>count on</em>
+        </h1>
+        <p class="hero-sub">
+          Professional, trusted childcare at the tap of a button. Book sessions, manage your schedule, and enjoy peace of mind — all in one place.
+        </p>
+        <div class="hero-cta">
+          <a href="signup.html" class="btn btn-primary btn-lg">Book a Babysitter →</a>
+          <a href="#services"   class="btn btn-ghost btn-lg">See Services</a>
+        </div>
+        <div class="hero-trust">
+          <div class="hero-trust-avatars">
+            <div class="hero-trust-avatar">M</div>
+            <div class="hero-trust-avatar">S</div>
+            <div class="hero-trust-avatar">J</div>
+            <div class="hero-trust-avatar">L</div>
+          </div>
+          <div class="hero-trust-text">
+            <strong>200+ families</strong> trust Clara's
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Booking preview card -->
+      <div class="hero-visual">
+        <div class="hero-card">
+          <div class="hero-card-header">
+            <span class="hero-card-title">📅 Available Times · Today</span>
+            <span class="hero-card-badge">Live</span>
+          </div>
+          <div class="hero-slots">
+            <div class="hero-slot selected">
+              <span class="hero-slot-time">9:00 AM – Morning Care</span>
+              <span class="hero-slot-status avail">Available</span>
+            </div>
+            <div class="hero-slot">
+              <span class="hero-slot-time">2:00 PM – Afternoon</span>
+              <span class="hero-slot-status avail">Available</span>
+            </div>
+            <div class="hero-slot">
+              <span class="hero-slot-time">5:00 PM – After School</span>
+              <span class="hero-slot-status avail">Available</span>
+            </div>
+            <div class="hero-slot">
+              <span class="hero-slot-time">7:00 PM – Evening</span>
+              <span class="hero-slot-status booked">Booked</span>
+            </div>
+          </div>
+          <button class="hero-card-btn" onclick="window.location.href='signup.html'">
+            Book 9:00 AM Session →
+          </button>
+          <div class="hero-stats">
+            <div class="hero-stat">
+              <span class="hero-stat-num">200+</span>
+              <span class="hero-stat-label">Families Served</span>
+            </div>
+            <div class="hero-stat">
+              <span class="hero-stat-num">5★</span>
+              <span class="hero-stat-label">Avg Rating</span>
+            </div>
+            <div class="hero-stat">
+              <span class="hero-stat-num">3 yrs</span>
+              <span class="hero-stat-label">Experience</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SERVICES
+  ============================================================ -->
+  <section class="services" id="services">
+    <div class="container">
+      <div class="services-header reveal">
+        <div class="section-label">🍀 What We Offer</div>
+        <h2 class="section-title">Childcare for every occasion</h2>
+        <p class="section-sub">From evening outings to weekend adventures, we've got a service that fits your family's needs.</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card reveal reveal-delay-1">
+          <div class="service-icon">🌙</div>
+          <h3>Evening Babysitting</h3>
+          <p>Perfect for date nights, events, or late work hours. Your little ones are in safe hands while you enjoy your evening.</p>
+        </div>
+        <div class="service-card reveal reveal-delay-2">
+          <div class="service-icon">☀️</div>
+          <h3>Weekend Care</h3>
+          <p>Full weekend sessions to give you a real break. Activities, meals, and fun — tailored to your child's age and interests.</p>
+        </div>
+        <div class="service-card reveal reveal-delay-3">
+          <div class="service-icon">📚</div>
+          <h3>After-School Care</h3>
+          <p>Homework help, healthy snacks, and supervised play. Consistent, reliable care every weekday afternoon.</p>
+        </div>
+        <div class="service-card reveal reveal-delay-4">
+          <div class="service-icon">🚨</div>
+          <h3>Emergency Childcare</h3>
+          <p>Last-minute coverage when life happens. Subject to availability — book as quickly as possible for urgent needs.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       WHY CHOOSE US
+  ============================================================ -->
+  <section class="why" id="why">
+    <div class="container why-inner">
+      <div class="why-visual reveal">
+        <div class="why-img-wrap">
+          <div class="why-img-inner">🌿</div>
+        </div>
+        <div class="why-badge">
+          <div class="why-badge-icon">⭐</div>
+          <div class="why-badge-text">
+            <strong>5.0 / 5 Rating</strong>
+            Across 200+ bookings
+          </div>
+        </div>
+      </div>
+      <div class="why-content">
+        <div class="section-label reveal">✨ Why Families Choose Us</div>
+        <h2 class="section-title reveal">A sitter you can truly trust</h2>
+        <p class="section-sub reveal">Clara brings warmth, reliability, and professionalism to every booking. Here's what makes the difference.</p>
+        <div class="why-benefits">
+          <div class="why-benefit reveal reveal-delay-1">
+            <div class="why-benefit-icon">🛡️</div>
+            <div>
+              <h4>Background-Checked & Trusted</h4>
+              <p>Every session is with a verified, experienced caregiver you can feel confident about.</p>
+            </div>
+          </div>
+          <div class="why-benefit reveal reveal-delay-2">
+            <div class="why-benefit-icon">📅</div>
+            <div>
+              <h4>Flexible, Easy Scheduling</h4>
+              <p>Book in minutes using our live calendar. See real-time availability and pick what works for you.</p>
+            </div>
+          </div>
+          <div class="why-benefit reveal reveal-delay-3">
+            <div class="why-benefit-icon">💬</div>
+            <div>
+              <h4>Clear Communication</h4>
+              <p>Get instant booking confirmations and status updates. No chasing messages or wondering if you're confirmed.</p>
+            </div>
+          </div>
+          <div class="why-benefit reveal reveal-delay-4">
+            <div class="why-benefit-icon">💻</div>
+            <div>
+              <h4>Seamless Online Booking</h4>
+              <p>Manage your bookings, view history, and cancel with ease — all from your phone or desktop.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       TESTIMONIALS
+  ============================================================ -->
+  <section class="testimonials" id="reviews">
+    <div class="container">
+      <div class="testimonials-header reveal">
+        <div class="section-label">💬 Parent Reviews</div>
+        <h2 class="section-title">What families are saying</h2>
+        <p class="section-sub">Real reviews from the parents who trust Clara's Babysitting week after week.</p>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card reveal reveal-delay-1">
+          <div class="testimonial-stars">
+            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+          </div>
+          <p class="testimonial-text">"Clara is absolutely wonderful with our two kids. The booking system is so easy — I can find a slot and confirm in under two minutes. Couldn't recommend more highly!"</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">M</div>
+            <div>
+              <div class="testimonial-name">Michelle T.</div>
+              <div class="testimonial-role">Parent of 2, Atlanta</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card reveal reveal-delay-2">
+          <div class="testimonial-stars">
+            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+          </div>
+          <p class="testimonial-text">"We use Clara's every Friday evening. The after-school service has been a lifesaver during busy weeks. My daughter absolutely loves her time with Clara."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">J</div>
+            <div>
+              <div class="testimonial-name">James & Sarah P.</div>
+              <div class="testimonial-role">Parent, Decatur</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card reveal reveal-delay-3">
+          <div class="testimonial-stars">
+            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+          </div>
+          <p class="testimonial-text">"When our regular sitter cancelled last-minute, we used the emergency booking feature and had coverage confirmed within the hour. Truly a game-changer for busy parents."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">L</div>
+            <div>
+              <div class="testimonial-name">Lauren K.</div>
+              <div class="testimonial-role">Parent of 1, Marietta</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CTA
+  ============================================================ -->
+  <section class="cta-section">
+    <div class="cta-section-bg">
+      <div class="cta-orb cta-orb-1"></div>
+      <div class="cta-orb cta-orb-2"></div>
+    </div>
+    <div class="container cta-inner reveal">
+      <div class="section-label" style="display:inline-flex;margin-bottom:20px">🌿 Get Started Today</div>
+      <h2>Ready to book your first session?</h2>
+      <p>Create a free account in under 60 seconds and see real-time availability. Your family deserves the best — and it's just a click away.</p>
+      <div class="cta-btns">
+        <a href="signup.html" class="btn btn-primary btn-lg">Create Free Account →</a>
+        <a href="login.html"  class="btn btn-ghost btn-lg">I already have an account</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <div class="nav-logo-icon" style="width:32px;height:32px;font-size:.9rem">🌿</div>
+            Clara's Babysitting
+          </div>
+          <p class="footer-tagline">Professional, trusted childcare for modern families. Book with confidence, every time.</p>
+        </div>
+        <div class="footer-col">
+          <h5>Services</h5>
+          <a href="#services">Evening Babysitting</a>
+          <a href="#services">Weekend Care</a>
+          <a href="#services">After-School</a>
+          <a href="#services">Emergency Care</a>
+        </div>
+        <div class="footer-col">
+          <h5>Account</h5>
+          <a href="signup.html">Create Account</a>
+          <a href="login.html">Log In</a>
+          <a href="dashboard.html">My Dashboard</a>
+        </div>
+        <div class="footer-col">
+          <h5>Company</h5>
+          <a href="#why">About Clara</a>
+          <a href="#reviews">Reviews</a>
+          <a href="mailto:hello@clarasbabysitting.com">Contact</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Clara's Babysitting. All rights reserved.</p>
+        <p>Made with 🌿 for families everywhere.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Container -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <!-- ============================================================
+       SCRIPTS
+  ============================================================ -->
+  <script>
+    // ---- Navbar scroll ----
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 40);
+    });
+
+    // ---- Hamburger ----
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobile-menu');
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('open');
+      mobileMenu.classList.toggle('open');
+    });
+
+    // Close mobile menu on link click
+    mobileMenu.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('open');
+        mobileMenu.classList.remove('open');
+      });
+    });
+
+    // ---- Scroll reveal ----
+    const revealEls = document.querySelectorAll('.reveal');
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+    revealEls.forEach(el => io.observe(el));
+
+    // ---- Smooth scroll for anchor links ----
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
+      });
+    });
+
+    // ---- Hero slot interaction ----
+    document.querySelectorAll('.hero-slot').forEach(slot => {
+      slot.addEventListener('click', () => {
+        if (slot.querySelector('.hero-slot-status').classList.contains('booked')) return;
+        document.querySelectorAll('.hero-slot').forEach(s => s.classList.remove('selected'));
+        slot.classList.add('selected');
+      });
+    });
+  </script>
+</body>
+</html>
