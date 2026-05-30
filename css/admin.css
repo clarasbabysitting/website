@@ -1,0 +1,142 @@
+/* ============================================================
+   Clara's Babysitting — Admin Stylesheet
+   ============================================================ */
+
+/* ---- Admin header style ---- */
+.admin-badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: linear-gradient(135deg, #7C3AED, #4F46E5);
+  color: white; padding: 4px 12px; border-radius: var(--radius-full);
+  font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+}
+
+/* ---- Action buttons in table ---- */
+.table-actions { display: flex; gap: 6px; flex-wrap: wrap; }
+.action-btn {
+  padding: 5px 12px; border-radius: var(--radius-full);
+  font-size: 0.75rem; font-weight: 700; cursor: pointer;
+  transition: all var(--transition); border: 1.5px solid transparent;
+  font-family: var(--font-body);
+}
+.action-approve {
+  background: var(--green-light); color: var(--green-dark);
+  border-color: var(--green-mid);
+}
+.action-approve:hover { background: var(--green); color: white; border-color: var(--green); }
+.action-reject {
+  background: #FEF2F2; color: #B91C1C; border-color: #FECACA;
+}
+.action-reject:hover { background: #EF4444; color: white; border-color: #EF4444; }
+.action-cancel {
+  background: var(--surface); color: var(--muted); border-color: var(--border);
+}
+.action-cancel:hover { background: var(--muted); color: white; border-color: var(--muted); }
+.action-block {
+  background: #FFF7ED; color: #C2410C; border-color: #FED7AA;
+}
+.action-block:hover { background: #F97316; color: white; border-color: #F97316; }
+.action-unblock {
+  background: var(--green-light); color: var(--green-dark); border-color: var(--green-mid);
+}
+.action-unblock:hover { background: var(--green); color: white; }
+
+/* ---- Block date form ---- */
+.block-card {
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); padding: 26px; margin-bottom: 20px;
+}
+.block-form {
+  display: grid; grid-template-columns: 1fr 1fr 1fr auto; gap: 12px; align-items: end;
+}
+.block-form-wide { grid-template-columns: 1fr auto; }
+
+/* ---- Customer cards ---- */
+.customer-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}
+.customer-card {
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); padding: 22px;
+  transition: all var(--transition);
+}
+.customer-card:hover { box-shadow: var(--shadow-md); border-color: var(--green-mid); }
+.customer-card-top { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
+.customer-avatar {
+  width: 46px; height: 46px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--green) 0%, var(--green-dark) 100%);
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700; color: white; font-size: 1rem; flex-shrink: 0;
+}
+.customer-name { font-weight: 700; color: var(--dark); font-size: 0.95rem; }
+.customer-email { color: var(--muted); font-size: 0.8rem; }
+.customer-stats { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; }
+.customer-stat { text-align: center; }
+.customer-stat-val { font-weight: 700; font-size: 1.1rem; color: var(--dark); display: block; }
+.customer-stat-label { color: var(--muted); font-size: 0.72rem; }
+
+/* ---- Availability manager ---- */
+.avail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.blocked-list { display: grid; gap: 8px; max-height: 400px; overflow-y: auto; }
+.blocked-item {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 10px 14px; border-radius: var(--radius-sm);
+  background: var(--off-white); border: 1px solid var(--border);
+  font-size: 0.85rem;
+}
+.blocked-item-info { }
+.blocked-date { font-weight: 600; color: var(--dark); }
+.blocked-reason { color: var(--muted); font-size: 0.78rem; }
+
+/* ---- Export bar ---- */
+.export-bar {
+  display: flex; gap: 10px; align-items: center; flex-wrap: wrap;
+  padding: 16px 22px; background: var(--off-white);
+  border-bottom: 1px solid var(--border);
+}
+.export-bar-title { font-weight: 600; color: var(--dark); font-size: 0.9rem; flex: 1; }
+
+/* ---- Filter row ---- */
+.filter-row {
+  display: flex; gap: 10px; align-items: center; flex-wrap: wrap;
+  padding: 14px 22px; border-bottom: 1px solid var(--border);
+  background: var(--off-white);
+}
+.filter-select {
+  padding: 8px 12px; border-radius: var(--radius-sm);
+  border: 1.5px solid var(--border); background: white;
+  font-family: var(--font-body); font-size: 0.85rem; color: var(--dark);
+  outline: none; cursor: pointer; transition: border-color var(--transition);
+}
+.filter-select:focus { border-color: var(--green); }
+.filter-input {
+  padding: 8px 12px; border-radius: var(--radius-sm);
+  border: 1.5px solid var(--border); background: white;
+  font-family: var(--font-body); font-size: 0.85rem; color: var(--dark);
+  outline: none; transition: border-color var(--transition);
+  min-width: 200px;
+}
+.filter-input:focus { border-color: var(--green); }
+
+/* ---- Calendar admin view ---- */
+.admin-cal-legend {
+  display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 16px; font-size: 0.8rem;
+}
+.legend-item { display: flex; align-items: center; gap: 6px; color: var(--muted); }
+.legend-dot {
+  width: 10px; height: 10px; border-radius: 50%;
+}
+.legend-dot.approved { background: var(--green); }
+.legend-dot.pending { background: #F59E0B; }
+.legend-dot.blocked { background: #EF4444; }
+
+/* ---- Responsive ---- */
+@media (max-width: 900px) {
+  .avail-grid { grid-template-columns: 1fr; }
+  .block-form { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 640px) {
+  .block-form { grid-template-columns: 1fr; }
+  .block-form-wide { grid-template-columns: 1fr; }
+  .customer-grid { grid-template-columns: 1fr; }
+}
