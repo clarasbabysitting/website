@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Dashboard — Clara's Babysitting</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌿</text></svg>">
+</head>
+<body>
+<div class="app-layout">
+
+  <!-- ============================================================
+       SIDEBAR
+  ============================================================ -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <a href="index.html" class="sidebar-logo">
+        <div class="sidebar-logo-icon">🌿</div>
+        Clara's
+      </a>
+    </div>
+    <nav class="sidebar-nav">
+      <div class="sidebar-section-label">Dashboard</div>
+      <button class="sidebar-link active" data-view="overview">
+        <div class="sidebar-link-icon">🏠</div>
+        Overview
+      </button>
+      <button class="sidebar-link" data-view="book">
+        <div class="sidebar-link-icon">📅</div>
+        Book a Session
+      </button>
+
+      <div class="sidebar-section-label">Bookings</div>
+      <button class="sidebar-link" data-view="history">
+        <div class="sidebar-link-icon">📋</div>
+        Booking History
+      </button>
+
+      <div class="sidebar-section-label">Account</div>
+      <button class="sidebar-link" data-view="account">
+        <div class="sidebar-link-icon">👤</div>
+        My Account
+      </button>
+    </nav>
+    <div class="sidebar-footer">
+      <div class="user-chip">
+        <div class="user-avatar user-display-avatar">?</div>
+        <div class="user-info">
+          <div class="user-name user-display-name">Loading…</div>
+          <div class="user-role">Parent</div>
+        </div>
+        <button class="user-logout" data-action="logout" title="Log out">⬅</button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ============================================================
+       MAIN CONTENT
+  ============================================================ -->
+  <main class="main-content">
+    <!-- Top Bar -->
+    <div class="top-bar">
+      <div>
+        <div class="top-bar-title" id="topbar-title">Dashboard</div>
+        <div class="top-bar-sub">Welcome back, <span class="user-display-name">—</span></div>
+      </div>
+      <div class="top-bar-right">
+        <button class="btn btn-primary btn-sm" onclick="document.querySelector('[data-view=book]').click()">
+          + Book Session
+        </button>
+        <button class="icon-btn" data-action="logout" title="Log out">⬅️</button>
+      </div>
+    </div>
+
+    <!-- ============================================================
+         VIEW: OVERVIEW
+    ============================================================ -->
+    <div class="dash-view active" id="view-overview">
+      <!-- Stat Cards -->
+      <div class="stat-cards">
+        <div class="stat-card">
+          <div class="stat-card-top">
+            <div class="stat-card-label">Upcoming</div>
+            <div class="stat-icon green">📅</div>
+          </div>
+          <div class="stat-value" id="stat-upcoming">—</div>
+          <div class="stat-change">Confirmed sessions</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card-top">
+            <div class="stat-card-label">Pending</div>
+            <div class="stat-icon amber">⏳</div>
+          </div>
+          <div class="stat-value" id="stat-pending">—</div>
+          <div class="stat-change">Awaiting approval</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card-top">
+            <div class="stat-card-label">Completed</div>
+            <div class="stat-icon blue">✅</div>
+          </div>
+          <div class="stat-value" id="stat-past">—</div>
+          <div class="stat-change">Past sessions</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card-top">
+            <div class="stat-card-label">Total Booked</div>
+            <div class="stat-icon green">📊</div>
+          </div>
+          <div class="stat-value" id="stat-total">—</div>
+          <div class="stat-change">All time</div>
+        </div>
+      </div>
+
+      <!-- Upcoming Bookings -->
+      <div class="table-card">
+        <div class="table-card-header">
+          <div class="table-card-title">📅 Upcoming Bookings</div>
+          <button class="btn btn-primary btn-sm" onclick="document.querySelector('[data-view=book]').click()">
+            + New Booking
+          </button>
+        </div>
+        <div id="upcoming-list">
+          <div style="padding:24px;text-align:center"><span class="spinner spinner-dark"></span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================================================
+         VIEW: BOOK
+    ============================================================ -->
+    <div class="dash-view" id="view-book">
+      <div style="margin-bottom:22px">
+        <h2 style="font-family:var(--font-display);font-size:1.6rem;color:var(--dark);margin-bottom:6px">Book a Session</h2>
+        <p style="color:var(--muted)">Select a date, choose an available time, then pick your service.</p>
+      </div>
+
+      <div class="booking-layout">
+        <!-- Calendar -->
+        <div class="calendar-card">
+          <div id="cal-widget"></div>
+        </div>
+
+        <!-- Slots + Booking Form -->
+        <div class="slots-card">
+          <div class="slots-date" id="selected-date-label">← Select a date</div>
+
+          <div class="slots-list" id="slots-list">
+            <div class="empty-state">
+              <div class="empty-icon">📅</div>
+              <p class="empty-title">Choose a date</p>
+              <p class="empty-sub">Click any date on the calendar to see available times.</p>
+            </div>
+          </div>
+
+          <div class="booking-form-wrap">
+            <div class="form-group service-select">
+              <label class="form-label">Service</label>
+              <select class="form-select" id="service-select"></select>
+            </div>
+            <button class="btn btn-primary" style="width:100%" id="book-submit-btn">
+              Confirm Booking Request
+            </button>
+            <p style="font-size:.78rem;color:var(--muted);margin-top:10px;text-align:center">
+              Bookings are pending until approved by Clara.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================================================
+         VIEW: HISTORY
+    ============================================================ -->
+    <div class="dash-view" id="view-history">
+      <div class="table-card">
+        <div class="table-card-header">
+          <div class="table-card-title">📋 All Bookings</div>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Service</th>
+                <th>Status</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="history-body">
+              <tr><td colspan="5" style="text-align:center;padding:32px"><span class="spinner spinner-dark"></span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================================================
+         VIEW: ACCOUNT
+    ============================================================ -->
+    <div class="dash-view" id="view-account">
+      <div style="max-width:540px">
+        <div class="table-card" style="margin-bottom:20px">
+          <div class="table-card-header"><div class="table-card-title">👤 Account Details</div></div>
+          <div style="padding:24px">
+            <div class="form-group">
+              <label class="form-label">Full Name</label>
+              <input type="text" id="account-name" class="form-input" readonly
+                style="background:var(--off-white);cursor:default">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Email Address</label>
+              <input type="email" id="account-email" class="form-input" readonly
+                style="background:var(--off-white);cursor:default">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Role</label>
+              <input type="text" class="form-input" value="Parent / Customer" readonly
+                style="background:var(--off-white);cursor:default">
+            </div>
+            <p style="font-size:.82rem;color:var(--muted)">
+              To update your name or email, please contact Clara directly.
+            </p>
+          </div>
+        </div>
+
+        <div class="table-card">
+          <div class="table-card-header"><div class="table-card-title">🔐 Sign Out</div></div>
+          <div style="padding:24px">
+            <p style="color:var(--muted);margin-bottom:16px;font-size:.9rem">
+              You're currently signed in. Click below to log out of your account.
+            </p>
+            <button class="btn btn-outline" data-action="logout">Log Out →</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<!-- Mobile sidebar toggle -->
+<button class="sidebar-toggle" id="sidebar-toggle" aria-label="Open menu">☰</button>
+
+<!-- Toast -->
+<div class="toast-container" id="toast-container"></div>
+
+<!-- Firebase -->
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+<script src="js/firebase.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/booking.js"></script>
+<script src="js/calendar.js"></script>
+<script src="js/dashboard.js"></script>
+</body>
+</html>
