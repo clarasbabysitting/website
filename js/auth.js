@@ -102,13 +102,15 @@ const Auth = (() => {
         alertEl.className = 'alert alert-success show';
         setTimeout(() => window.location.href = 'dashboard.html', 1200);
       }catch (err) {
-    console.error(err);
-    console.error(err.code);
-    console.error(err.message);
+  console.error("FULL ERROR:", err);
+  console.error("CODE:", err.code);
+  console.error("MESSAGE:", err.message);
 
-    alertEl.textContent = err.message;
-    alertEl.className = 'alert alert-error show';
-    setLoading(btn, false);
+  alert(err.code + "\n" + err.message);
+
+  alertEl.textContent = err.message;
+  alertEl.className = 'alert alert-error show';
+  setLoading(btn, false);
 }
     });
   }
@@ -138,13 +140,15 @@ const Auth = (() => {
         const role = snap.exists ? snap.data().role : 'user';
         window.location.href = role === 'admin' ? 'admin.html' : 'dashboard.html';
       }catch (err) {
-    console.error(err);
-    console.error(err.code);
-    console.error(err.message);
+  console.error("FULL ERROR:", err);
+  console.error("CODE:", err.code);
+  console.error("MESSAGE:", err.message);
 
-    alertEl.textContent = err.message;
-    alertEl.className = 'alert alert-error show';
-    setLoading(btn, false);
+  alert(err.code + "\n" + err.message);
+
+  alertEl.textContent = err.message;
+  alertEl.className = 'alert alert-error show';
+  setLoading(btn, false);
 }
     });
   }
