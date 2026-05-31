@@ -101,11 +101,15 @@ const Auth = (() => {
         alertEl.textContent = 'Account created! Redirecting…';
         alertEl.className = 'alert alert-success show';
         setTimeout(() => window.location.href = 'dashboard.html', 1200);
-      } catch (err) {
-        alertEl.textContent = friendlyError(err.code);
-        alertEl.className = 'alert alert-error show';
-        setLoading(btn, false);
-      }
+      }catch (err) {
+    console.error(err);
+    console.error(err.code);
+    console.error(err.message);
+
+    alertEl.textContent = err.message;
+    alertEl.className = 'alert alert-error show';
+    setLoading(btn, false);
+}
     });
   }
 
@@ -133,11 +137,15 @@ const Auth = (() => {
         const snap = await db.collection('users').doc(cred.user.uid).get();
         const role = snap.exists ? snap.data().role : 'user';
         window.location.href = role === 'admin' ? 'admin.html' : 'dashboard.html';
-      } catch (err) {
-        alertEl.textContent = friendlyError(err.code);
-        alertEl.className = 'alert alert-error show';
-        setLoading(btn, false);
-      }
+      }catch (err) {
+    console.error(err);
+    console.error(err.code);
+    console.error(err.message);
+
+    alertEl.textContent = err.message;
+    alertEl.className = 'alert alert-error show';
+    setLoading(btn, false);
+}
     });
   }
 
